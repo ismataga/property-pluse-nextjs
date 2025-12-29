@@ -1,21 +1,22 @@
-import Link from "next/link";
+import properties from "../properties.json";
+import PropertyCard from "@/components/PropertyCard";
 
 const HomePage = () => {
   return (
-    <div >
-      <h1 className="text-3xl font-bold underline">
-        Hello, Next.js with Tailwind CSS!
-      </h1>
-      <p className="mt-4">
-        This is the home page of your Next.js application.
-      </p>
-      <Link href="/properties/1" className="text-blue-500 underline">
-        Go to Property Page
-      </Link>
-      <br />
-      Tailwind is working 🚀
-    </div>
+    <section className="px-4 py-6">
+      <div className="container-xl lg:container m-auto px-4 py-6">
+        {properties.length === 0 ? (
+          <p>No properties found</p>
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {properties.map((property) => (
+              <PropertyCard key={property._id} property={property} />
+            ))}
+          </div>
+        )}
+      </div>
+    </section>
   );
-}
+};
 
 export default HomePage;
