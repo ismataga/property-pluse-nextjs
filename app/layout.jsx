@@ -8,11 +8,10 @@ export const metadata = {
   description: "Discover Your Dream Property with Property Plus",
 };
 
-
-const MainLayout = ({children}) => {
+const MainLayout = ({ children }) => {
   return (
-    <html>
-      <body>
+    <html lang="en" suppressHydrationWarning>
+      <body suppressHydrationWarning>
         <Navbar />
         <main>{children}</main>
         <Footer />
