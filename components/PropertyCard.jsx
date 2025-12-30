@@ -11,7 +11,7 @@ import properties from "../properties.json";
 
 
 
-const PropertyCard = (property) => {
+const PropertyCard = ({property}) => {
   return (
     <div className="rounded-xl shadow-md relative">
       <Image
